@@ -1,17 +1,16 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
 import { authLogin } from "../rtk/slices/auth-slice";
-
-export const useSignup = () => {
+import { useDispatch } from "react-redux";
+export const useLogin = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
   const dispatch = useDispatch();
 
-  const signup = async (email, password) => {
+  const login = async (email, password) => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch("/api/user/signup", {
+    const response = await fetch("/api/user/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -34,5 +33,5 @@ export const useSignup = () => {
     }
   };
 
-  return { signup, isLoading, error };
+  return { login, isLoading, error };
 };

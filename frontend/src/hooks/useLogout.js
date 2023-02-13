@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { Logout } from "../rtk/slices/auth-slice";
+import { authLogout } from "../rtk/slices/auth-slice";
 
 export const useLogout = () => {
   const dispatch = useDispatch();
@@ -9,7 +9,7 @@ export const useLogout = () => {
     localStorage.removeItem("user");
 
     // dispatch logout action
-    dispatch(Logout());
+    dispatch(authLogout());
   };
 
   return { logout };
