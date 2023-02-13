@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { login } from "../rtk/slices/auth-slice";
+import { Login } from "../rtk/slices/auth-slice";
 
 export const useSignup = () => {
   const [error, setError] = useState(null);
@@ -27,7 +27,7 @@ export const useSignup = () => {
       localStorage.setItem("user", JSON.stringify(json));
 
       // update the auth context
-      dispatch(login(json));
+      dispatch(Login(json));
 
       // update loading state
       setIsLoading(false);
