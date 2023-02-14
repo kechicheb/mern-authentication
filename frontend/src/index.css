@@ -65,10 +65,6 @@ header a {
   padding: 6px;
   border-radius: 50%;
   color: #333;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
 }
 
 /* new workout form */
@@ -84,10 +80,6 @@ input {
   border: 1px solid #ddd;
   border-radius: 4px;
   box-sizing: border-box;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
 }
 form button {
   background: var(--primary);
@@ -97,10 +89,6 @@ form button {
   font-family: "Poppins";
   border-radius: 4px;
   cursor: pointer;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
 }
 div.error {
   padding: 10px;
@@ -113,15 +101,16 @@ div.error {
 input.error {
   border: 1px solid var(--error);
 }
+
 /* navbar */
 nav {
   display: flex;
   align-items: center;
 }
-nav a {
+nav a,
+nav button {
   margin-left: 10px;
 }
-
 nav button {
   background: #fff;
   color: var(--primary);
