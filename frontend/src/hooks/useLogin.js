@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { authLogin } from "../rtk/slices/auth-slice";
+import { setWorkouts } from "../rtk/slices/workout-slice";
 import { useDispatch } from "react-redux";
 export const useLogin = () => {
   const [error, setError] = useState(null);
@@ -28,6 +29,8 @@ export const useLogin = () => {
       // update the auth context
       dispatch(authLogin(json));
 
+      //In order not to see workouts of the user who was logged in before you
+      dispatch(setWorkouts(null));
       // update loading state
       setIsLoading(false);
     }
